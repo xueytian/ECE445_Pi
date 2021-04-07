@@ -8,6 +8,11 @@ pip3 install paramiko
 python3 ssh.py --table ...
 ```
 
+-Change key file permission
+```bash
+chmod 0600 jlf
+```
+
 -Run py file  
   new notification:
 ```bash
