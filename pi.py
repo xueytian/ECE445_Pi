@@ -12,13 +12,12 @@ def insert_data(table, species=0):
             command = './insert_notification.sh'
         elif table == 2:
             # upload image to imgur
-
-            # CLIENT_ID = '0c214ab9446e86e'
-            # im = pyimgur.Imgur(CLIENT_ID)
-            # uploaded_image = im.upload_image("pic.jpg", title="pic")
-            # url = uploaded_image.link
+            CLIENT_ID = '0c214ab9446e86e'
+            im = pyimgur.Imgur(CLIENT_ID)
+            uploaded_image = im.upload_image("pic.jpg", title="pic")
+            url = uploaded_image.link
             species = str(species)
-            url = "https://images.unsplash.com/photo-1480044965905-02098d419e96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            # url = "https://images.unsplash.com/photo-1480044965905-02098d419e96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
             command = './insert_image.sh "' + url + '" ' + species
         else:
             command = 'ls'
