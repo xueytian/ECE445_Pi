@@ -34,12 +34,11 @@ def insert_data(table, species=0):
     except:
         print("unable to insert data")
 
-def object_detection(threshold=0.5, modeldir='BirdSquirrelRaccoon_TFLite_model', graph='detect.tflite', labels='labelmap.txt'):
+def object_detection(camera, threshold=0.5, modeldir='BirdSquirrelRaccoon_TFLite_model', graph='detect.tflite', labels='labelmap.txt'):
     import cv2
     import os
     from tflite_runtime.interpreter import Interpreter
 
-    camera = PiCamera()
     camera.start_preview()
     # sleep(1)
     camera.capture('pic.jpg')
