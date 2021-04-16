@@ -38,18 +38,24 @@ void loop() {
   if(cm<=10){
     object_detected = true;
     //test if cm<10T
-    digitalWrite(ledPin, HIGH); 
+    tone(buzzerpin,35000);
     delay(1000);
-    digitalWrite(ledPin, LOW); 
-    delay(3000);
-    Serial.println(object_detected); //send object detected signal to Pi
-    
-    }else{
-    object_detected = false;
-    Serial.println(object_detected); //send object detected signal to Pi
+    noTone(buzzerpin);
+//    Serial.println(object_detected); //send object detected signal to Pi
+    myStepper.step(100);
+    delay(1000);
+    myStepper.step(-100);
+    }
+  else if(light <50){
+//    object_detected = false;
+//    Serial.println("false"); //send object detected signal to Pi
+    Serial.print(light);
+      digitalWrite(ledPin, HIGH);
+      delay(3000);
+      digitalWrite(ledPin, LOW);
     }
   
-  
+  delay(1000);
 
 }
 
