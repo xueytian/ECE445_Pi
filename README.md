@@ -8,9 +8,9 @@ $cd ~
 #!/bin/bash
 cd ECE445/tflite1
 source tflite1-env/bin/activate
-python3 <file path>
+python3 <file path (the python file we want to run all the time)>
 ```
-3. make the file executable
+3. make the script executable
 ```bash
 sudo chmod +x <filename>.sh
 ```
